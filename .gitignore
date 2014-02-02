@@ -1,4 +1,10 @@
 .gradle
-/local.properties
+.idea
+.properties
+
+.bat
 /.idea/workspace.xml
+
 .DS_Store
+
+/app/build
