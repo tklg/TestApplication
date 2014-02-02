@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.TestApp.app" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.TestApp.app.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.TestApp.app.DisplayMessage"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName="com.TestApp.app.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.TestApp.app.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.TestApp.app.FullscreenClock"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen_clock"
+            android:parentActivityName="com.TestApp.app.MainActivity"
+            android:theme="@style/FullscreenTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.TestApp.app.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.TestApp.app.util.ColorTester"
+            android:label="@string/title_activity_color_tester"
+            android:parentActivityName="com.TestApp.app.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.TestApp.app.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.TestApp.app.ColorTester"
+            android:label="@string/title_activity_color_tester"
+            android:parentActivityName="com.TestApp.app.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.TestApp.app.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.TestApp.app.SeekbarTest"
+            android:label="@string/title_activity_seekbar_test"
+            android:parentActivityName="com.TestApp.app.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.TestApp.app.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
