@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,6 +57,7 @@ public class FavoriteColors extends Activity {
 
         initList();
 
+        //final LinearLayout colorListParent = (LinearLayout) findViewById(R.id.colorListParent);
         final ListView colorList = (ListView) findViewById(R.id.colorList);
         final SimpleAdapter simpleAdpt = new SimpleAdapter(this, colorsList, android.R.layout.simple_list_item_1, new String[] {"color"}, new int[] {android.R.id.text1});
         colorList.setAdapter(simpleAdpt);
@@ -61,39 +65,38 @@ public class FavoriteColors extends Activity {
         //listen for when the user presses an item in the list
         colorList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parentAdapter, View view, final int position, long id) {
 
-                // We know the View is a TextView so we can cast it
                 final TextView clickedView = (TextView) view;
+                final String hexval = clickedView.getText().toString();
+                //makeToast("Item with id [" + id + "] at Position [" + position + "] with Color [" + clickedView.getText() + "]");
 
-        SwipeDismissListViewTouchListener touchListener =
-                new SwipeDismissListViewTouchListener(colorList,
-                        new SwipeDismissListViewTouchListener.DismissCallbacks() {
-                            @Override
-                            public boolean canDismiss(int position) {
-                                return true;
+                PopupMenu popup = new PopupMenu(FavoriteColors.this, clickedView, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
+                popup.getMenuInflater().inflate(R.menu.popup_menu_favoritecolor, popup.getMenu());
+
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.favcolor_use: {
+                                makeToast("Using color " + clickedView.getText().toString());
+                                break;
                             }
-
-                            @Override
-                            public void onDismiss(ListView colorList, int[] reverseSortedPositions) {
-                                for (int position : reverseSortedPositions) {
-
-                                    removeLineFromFile(clickedView.getText().toString());
-                                    colorsList.remove(simpleAdpt.getItem(position));
-                                    //remove the entry from the "database" file here as well
-
-                                }
+                            case R.id.favcolor_delete: {
+                                removeLineFromFile(hexval);
+                                colorsList.remove(simpleAdpt.getItem(position));
                                 simpleAdpt.notifyDataSetChanged();
+                                makeToast(hexval + " deleted. Undo?");
+                                break;
                             }
-                        });
-                colorList.setOnTouchListener(touchListener);
-                // Setting this scroll listener is required to ensure that during ListView scrolling, we don't look for swipes.
-                colorList.setOnScrollListener(touchListener.makeScrollListener());
-
-                //removeLineFromFile(clickedView.getText().toString());
-                //colorsList.remove(simpleAdpt.getItem(position));
-                //simpleAdpt.notifyDataSetChanged();
-                makeToast("Item with id [" + id + "] at Position [" + position + "] with Color [" + clickedView.getText() + "]");
+                            case R.id.favcolor_info: {
+                                makeToast("TODO");
+                                break;
+                            }
+                        }
+                        return true;
+                    }
+                });
+                popup.show();
             }
         });
     }
@@ -178,13 +181,9 @@ public class FavoriteColors extends Activity {
                         output.write(receiveString + "\n");
                     }
                 }
-
                 //inputStream.close();
                 output.close();
-                //ret = stringBuilder.toString();
-
             //Delete the original file
-
             try {
 
                 if (!inFile.exists()) {
