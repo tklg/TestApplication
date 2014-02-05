@@ -16,14 +16,14 @@
         <activity android:configChanges="orientation|keyboardHidden|screenSize" android:label="@string/title_activity_fullscreen_clock" android:name="com.TestApp.app.FullscreenClock" android:parentActivityName="com.TestApp.app.MainActivity" android:theme="@style/FullscreenTheme">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.TestApp.app.MainActivity"/>
         </activity>
-        <activity android:label="@string/title_activity_color_tester" android:name="com.TestApp.app.util.ColorTester" android:parentActivityName="com.TestApp.app.MainActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.TestApp.app.MainActivity"/>
-        </activity>
         <activity android:label="@string/title_activity_color_tester" android:name="com.TestApp.app.ColorTester" android:parentActivityName="com.TestApp.app.MainActivity">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.TestApp.app.MainActivity"/>
         </activity>
         <activity android:label="@string/title_activity_seekbar_test" android:name="com.TestApp.app.SeekbarTest" android:parentActivityName="com.TestApp.app.MainActivity">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.TestApp.app.MainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_favorite_colors" android:name="com.TestApp.app.FavoriteColors" android:parentActivityName="com.TestApp.app.ColorTester">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.TestApp.app.ColorTester"/>
         </activity>
     </application>
 

@@ -39,14 +39,6 @@
                 android:value="com.TestApp.app.MainActivity" />
         </activity>
         <activity
-            android:name="com.TestApp.app.util.ColorTester"
-            android:label="@string/title_activity_color_tester"
-            android:parentActivityName="com.TestApp.app.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.TestApp.app.MainActivity" />
-        </activity>
-        <activity
             android:name="com.TestApp.app.ColorTester"
             android:label="@string/title_activity_color_tester"
             android:parentActivityName="com.TestApp.app.MainActivity" >
@@ -61,6 +53,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.TestApp.app.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.TestApp.app.FavoriteColors"
+            android:label="@string/title_activity_favorite_colors"
+            android:parentActivityName="com.TestApp.app.ColorTester" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.TestApp.app.ColorTester" />
         </activity>
     </application>
 

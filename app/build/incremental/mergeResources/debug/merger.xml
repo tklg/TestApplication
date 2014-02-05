@@ -6160,16 +6160,16 @@ true
                     msgid="3588849162933574182" >"Več možnosti"
                 </string>
                 <string
-                    name="abc_action_mode_done"
-                    msgid="4076576682505996667" >"Končano"
+                    name="abc_shareactionprovider_share_with"
+                    msgid="3421042268587513524" >"Deljenje z"
                 </string>
                 <string
                     name="abc_activity_chooser_view_see_all"
                     msgid="7468859129482906941" >"Pokaži vse"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with"
-                    msgid="3421042268587513524" >"Deljenje z"
+                    name="abc_action_mode_done"
+                    msgid="4076576682505996667" >"Končano"
                 </string>
                 <string
                     name="abc_action_bar_home_description"
@@ -6188,12 +6188,12 @@ true
                     msgid="8264924765203268293" >"Iskanje"
                 </string>
                 <string
-                    name="abc_searchview_description_query"
-                    msgid="2550479030709304392" >"Iskalna poizvedba"
-                </string>
-                <string
                     name="abc_searchview_description_submit"
                     msgid="8928215447528550784" >"Pošiljanje poizvedbe"
+                </string>
+                <string
+                    name="abc_searchview_description_query"
+                    msgid="2550479030709304392" >"Iskalna poizvedba"
                 </string>
                 <string
                     name="abc_searchview_description_voice"
@@ -7450,9 +7450,229 @@ false
     <dataSet config="main" >
         <source path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res" >
             <file
+                name="apptheme_scrubber_control_disabled_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_disabled_holo_blue.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_disabled_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_disabled_holo_green.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_disabled_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_disabled_holo_red.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_focused_holo_blue.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_focused_holo_green.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_focused_holo_red.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_normal_holo_blue.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_normal_holo_green.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_normal_holo_red.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_pressed_holo_blue.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_pressed_holo_green.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_control_pressed_holo_red.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_primary_holo_blue.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_primary_holo_green.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_primary_holo_red.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_secondary_holo_blue.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_secondary_holo_green.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_secondary_holo_red.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_track_holo_dark_blue.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_track_holo_dark_green.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\apptheme_scrubber_track_holo_dark_red.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_action_favorite"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\ic_action_favorite.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-hdpi\ic_launcher.png"
                 qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_disabled_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_disabled_holo_blue.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_disabled_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_disabled_holo_green.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_disabled_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_disabled_holo_red.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_focused_holo_blue.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_focused_holo_green.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_focused_holo_red.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_normal_holo_blue.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_normal_holo_green.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_normal_holo_red.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_pressed_holo_blue.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_pressed_holo_green.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_control_pressed_holo_red.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_primary_holo_blue.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_primary_holo_green.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_primary_holo_red.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_secondary_holo_blue.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_secondary_holo_green.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_secondary_holo_red.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_track_holo_dark_blue.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_track_holo_dark_green.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\apptheme_scrubber_track_holo_dark_red.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_action_favorite"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-mdpi\ic_action_favorite.png"
+                qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="ic_launcher"
@@ -7460,9 +7680,229 @@ false
                 qualifiers="mdpi"
                 type="drawable" />
             <file
+                name="apptheme_scrubber_control_disabled_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_disabled_holo_blue.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_disabled_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_disabled_holo_green.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_disabled_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_disabled_holo_red.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_focused_holo_blue.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_focused_holo_green.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_focused_holo_red.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_normal_holo_blue.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_normal_holo_green.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_normal_holo_red.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_pressed_holo_blue.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_pressed_holo_green.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_control_pressed_holo_red.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_primary_holo_blue.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_primary_holo_green.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_primary_holo_red.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_secondary_holo_blue.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_secondary_holo_green.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_secondary_holo_red.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_track_holo_dark_blue.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_track_holo_dark_green.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\apptheme_scrubber_track_holo_dark_red.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_favorite"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\ic_action_favorite.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xhdpi\ic_launcher.png"
                 qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_disabled_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_disabled_holo_blue.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_disabled_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_disabled_holo_green.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_disabled_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_disabled_holo_red.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_focused_holo_blue.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_focused_holo_green.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_focused_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_focused_holo_red.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_normal_holo_blue.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_normal_holo_green.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_normal_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_normal_holo_red.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_pressed_holo_blue.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_pressed_holo_green.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_control_pressed_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_control_pressed_holo_red.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_primary_holo_blue.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_primary_holo_green.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_primary_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_primary_holo_red.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_secondary_holo_blue.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_secondary_holo_green.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_secondary_holo_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_secondary_holo_red.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_blue"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_track_holo_dark_blue.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_green"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_track_holo_dark_green.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="apptheme_scrubber_track_holo_dark_red"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\apptheme_scrubber_track_holo_dark_red.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="ic_action_favorite"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\drawable-xxhdpi\ic_action_favorite.png"
+                qualifiers="xxhdpi"
                 type="drawable" />
             <file
                 name="ic_launcher"
@@ -7470,13 +7910,33 @@ false
                 qualifiers="xxhdpi"
                 type="drawable" />
             <file
+                name="activity_color_tester"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\activity_color_tester.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_display_message"
                 path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\activity_display_message.xml"
                 qualifiers=""
                 type="layout" />
             <file
+                name="activity_fullscreen_clock"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\activity_fullscreen_clock.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_main"
                 path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_seekbar_test"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\activity_seekbar_test.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_color_tester"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\fragment_color_tester.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -7490,6 +7950,16 @@ false
                 qualifiers=""
                 type="layout" />
             <file
+                name="fragment_seekbar_test"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\fragment_seekbar_test.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="color_tester"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\menu\color_tester.xml"
+                qualifiers=""
+                type="menu" />
+            <file
                 name="display_message"
                 path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\menu\display_message.xml"
                 qualifiers=""
@@ -7499,6 +7969,29 @@ false
                 path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\menu\main.xml"
                 qualifiers=""
                 type="menu" />
+            <file
+                name="seekbar_test"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\menu\seekbar_test.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\values\attrs.xml"
+                qualifiers="" >
+                <declare-styleable name="ButtonBarContainerTheme" >
+                    <attr
+                        name="metaButtonBarStyle"
+                        format="reference" />
+                    <attr
+                        name="metaButtonBarButtonStyle"
+                        format="reference" />
+                </declare-styleable>
+            </file>
+            <file
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\values\colors.xml"
+                qualifiers="" >
+                <color name="black_overlay" >#66000000
+                </color>
+            </file>
             <file
                 path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\values\dimens.xml"
                 qualifiers="" >
@@ -7518,9 +8011,14 @@ false
                 </string>
                 <string name="edit_message" >Words go here
                 </string>
+                <string name="saved_color_1" ></string>
                 <string name="colorTester" >Color
                 </string>
                 <string name="dummy_button" >Dummy Button
+                </string>
+                <string name="title_activity_addToFavorites" >Add to favorites
+                </string>
+                <string name="title_activity_favorite_colors" >Favorite Colors
                 </string>
                 <string name="button_send" >Send
                 </string>
@@ -7534,13 +8032,13 @@ false
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
-                <string name="title_activity_seekbar_test" >SeekbarTest
+                <string name="title_activity_seekbar_test" >Seekbar Tester
                 </string>
-                <string name="title_activity_fullscreen_clock" >FullscreenClockActivity
+                <string name="title_activity_color_tester" >Color Tester
+                </string>
+                <string name="title_activity_fullscreen_clock" >Fullscreen ClockActivity
                 </string>
                 <string name="seekbarTest" >SeekBar Test
-                </string>
-                <string name="title_activity_color_tester" >ColorTester
                 </string>
             </file>
             <file
@@ -7592,12 +8090,6 @@ false
                 </style>
             </file>
             <file
-                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\values-w820dp\dimens.xml"
-                qualifiers="w820dp" >
-                <dimen name="activity_horizontal_margin" >64dp
-                </dimen>
-            </file>
-            <file
                 path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\values-v11\styles.xml"
                 qualifiers="v11" >
 
@@ -7630,58 +8122,26 @@ true
                 </style>
             </file>
             <file
-                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\values\attrs.xml"
-                qualifiers="" >
-                <declare-styleable name="ButtonBarContainerTheme" >
-                    <attr
-                        name="metaButtonBarStyle"
-                        format="reference" />
-                    <attr
-                        name="metaButtonBarButtonStyle"
-                        format="reference" />
-                </declare-styleable>
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\values-w820dp\dimens.xml"
+                qualifiers="w820dp" >
+                <dimen name="activity_horizontal_margin" >64dp
+                </dimen>
             </file>
             <file
-                name="activity_fullscreen_clock"
-                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\activity_fullscreen_clock.xml"
+                name="activity_favorite_colors"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\activity_favorite_colors.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\values\colors.xml"
-                qualifiers="" >
-                <color name="black_overlay" >#66000000
-                </color>
-            </file>
-            <file
-                name="color_tester"
-                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\menu\color_tester.xml"
+                name="favorite_colors"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\menu\favorite_colors.xml"
                 qualifiers=""
                 type="menu" />
             <file
-                name="fragment_seekbar_test"
-                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\fragment_seekbar_test.xml"
+                name="fragment_favorite_colors"
+                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\fragment_favorite_colors.xml"
                 qualifiers=""
                 type="layout" />
-            <file
-                name="activity_color_tester"
-                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\activity_color_tester.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="activity_seekbar_test"
-                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\activity_seekbar_test.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_color_tester"
-                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\layout\fragment_color_tester.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="seekbar_test"
-                path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\src\main\res\menu\seekbar_test.xml"
-                qualifiers=""
-                type="menu" />
         </source>
         <source path="C:\Users\Theodore Kluge\AndroidStudioProjects\TestApplication\app\build\res\rs\debug" />
     </dataSet>

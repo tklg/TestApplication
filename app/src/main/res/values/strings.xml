@@ -11,14 +11,23 @@
     <String name="button_boop">Boop</String>
 
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_fullscreen_clock">FullscreenClockActivity</string>
+    <string name="title_activity_fullscreen_clock">Fullscreen ClockActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="testClock">Clock</string>
-    <string name="title_activity_color_tester">ColorTester</string>
+    <string name="title_activity_color_tester">Color Tester</string>
     <string name="colorTester">Color</string>
     <string name="colorTesterTitle">Test Color</string>
-    <string name="title_activity_seekbar_test">SeekbarTest</string>
+    <string name="title_activity_seekbar_test">Seekbar Tester</string>
     <string name="seekbarTest">SeekBar Test</string>
+
+    <String name="action_favorite">❤</String>
+
+    <string name="title_activity_favorite_colors">Favorite Colors</string>
+    <string name="title_activity_addToFavorites">Add to favorites</string>
+
+    <!-- WRITEABLE STRINGS -->
+
+    <string name="saved_color_1"></string>
 
 </resources>

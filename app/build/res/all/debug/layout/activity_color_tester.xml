@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.TestApp.app.ColorTester" >
+    android:background="@color/black_overlay"
+    android:soundEffectsEnabled="true"
+    tools:context=".ColorTester" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,6 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_weight=".8"
             android:layout_margin="10dp"
+            android:progressDrawable="@drawable/apptheme_scrubber_primary_holo_red"
+            android:thumb="@drawable/apptheme_scrubber_control_normal_holo_red"
             android:max="255" />
 
         <TextView
@@ -40,6 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_weight=".8"
             android:layout_margin="10dp"
+            android:progressDrawable="@drawable/apptheme_scrubber_primary_holo_green"
+            android:thumb="@drawable/apptheme_scrubber_control_normal_holo_green"
             android:max="255"
             />
 
@@ -64,6 +70,8 @@
             android:layout_height="wrap_content"
             android:layout_weight=".8"
             android:layout_margin="10dp"
+            android:progressDrawable="@drawable/apptheme_scrubber_primary_holo_blue"
+            android:thumb="@drawable/apptheme_scrubber_control_normal_holo_blue"
             android:max="255"
             />
 
@@ -75,6 +83,40 @@
             android:gravity="right"
             android:layout_gravity="center_vertical" />
 
-        </LinearLayout>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".85"
+        android:orientation="vertical">
+
+        <!-- Big empty space -->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".15"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/textHEXColor"
+            android:layout_gravity="center_horizontal|bottom" />
+
+        <!-- <Button
+            android:id="@+id/button_favorite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:text="❤"
+            android:textSize="20sp"
+            android:layout_gravity="top"/> -->
+
+      </LinearLayout>
 </LinearLayout><!-- From: file:/C:/Users/Theodore%20Kluge/AndroidStudioProjects/TestApplication/app/src/main/res/layout/activity_color_tester.xml -->

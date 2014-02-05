@@ -1,10 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.TestApp.app.ColorTester" >
+    tools:context=".ColorTester" >
     
-    <item android:id="@+id/action_settings"
+    <!--<item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
+        app:showAsAction="never" />-->
+
+    <item android:id="@+id/action_favorite"
+        android:title="@string/title_activity_favorite_colors"
+        android:orderInCategory="2"
         app:showAsAction="never" />
+
+    <item android:id="@+id/action_addToFavorite"
+        android:title="@string/title_activity_addToFavorites"
+        android:orderInCategory="1"
+        app:showAsAction="never"
+        />
 </menu>

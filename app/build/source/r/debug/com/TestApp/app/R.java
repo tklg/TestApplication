@@ -860,9 +860,32 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int apptheme_scrubber_control_disabled_holo_blue=0x7f020057;
+        public static final int apptheme_scrubber_control_disabled_holo_green=0x7f020058;
+        public static final int apptheme_scrubber_control_disabled_holo_red=0x7f020059;
+        public static final int apptheme_scrubber_control_focused_holo_blue=0x7f02005a;
+        public static final int apptheme_scrubber_control_focused_holo_green=0x7f02005b;
+        public static final int apptheme_scrubber_control_focused_holo_red=0x7f02005c;
+        public static final int apptheme_scrubber_control_normal_holo_blue=0x7f02005d;
+        public static final int apptheme_scrubber_control_normal_holo_green=0x7f02005e;
+        public static final int apptheme_scrubber_control_normal_holo_red=0x7f02005f;
+        public static final int apptheme_scrubber_control_pressed_holo_blue=0x7f020060;
+        public static final int apptheme_scrubber_control_pressed_holo_green=0x7f020061;
+        public static final int apptheme_scrubber_control_pressed_holo_red=0x7f020062;
+        public static final int apptheme_scrubber_primary_holo_blue=0x7f020063;
+        public static final int apptheme_scrubber_primary_holo_green=0x7f020064;
+        public static final int apptheme_scrubber_primary_holo_red=0x7f020065;
+        public static final int apptheme_scrubber_secondary_holo_blue=0x7f020066;
+        public static final int apptheme_scrubber_secondary_holo_green=0x7f020067;
+        public static final int apptheme_scrubber_secondary_holo_red=0x7f020068;
+        public static final int apptheme_scrubber_track_holo_dark_blue=0x7f020069;
+        public static final int apptheme_scrubber_track_holo_dark_green=0x7f02006a;
+        public static final int apptheme_scrubber_track_holo_dark_red=0x7f02006b;
+        public static final int ic_action_favorite=0x7f02006c;
+        public static final int ic_launcher=0x7f02006d;
     }
     public static final class id {
+        public static final int action_addToFavorite=0x7f07004d;
         public static final int action_bar=0x7f07001c;
         public static final int action_bar_activity_content=0x7f070014;
         public static final int action_bar_container=0x7f07001b;
@@ -871,17 +894,19 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f070023;
         public static final int action_bar_title=0x7f070022;
         public static final int action_context_bar=0x7f07001d;
+        public static final int action_favorite=0x7f07004c;
         public static final int action_menu_divider=0x7f070015;
         public static final int action_menu_presenter=0x7f070016;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f07004a;
+        public static final int action_settings=0x7f07004e;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int always=0x7f07000f;
-        public static final int analogClock=0x7f070044;
+        public static final int analogClock=0x7f070046;
         public static final int beginning=0x7f07000a;
-        public static final int buttonSend=0x7f070047;
+        public static final int buttonSend=0x7f070049;
         public static final int checkbox=0x7f07002d;
         public static final int collapseActionView=0x7f070011;
+        public static final int colorList=0x7f070045;
         public static final int colorTestIndBlue=0x7f070042;
         public static final int colorTestIndGreen=0x7f070040;
         public static final int colorTestIndRed=0x7f07003e;
@@ -890,8 +915,8 @@ containing a value of this type.
         public static final int dialog=0x7f070012;
         public static final int disableHome=0x7f070008;
         public static final int dropdown=0x7f070013;
-        public static final int dummyText=0x7f070045;
-        public static final int edit_message=0x7f070046;
+        public static final int dummyText=0x7f070047;
+        public static final int edit_message=0x7f070048;
         public static final int edit_query=0x7f070030;
         public static final int end=0x7f07000c;
         public static final int expand_activities_button=0x7f070026;
@@ -920,7 +945,7 @@ containing a value of this type.
         public static final int search_plate=0x7f070036;
         public static final int search_src_text=0x7f070037;
         public static final int search_voice_btn=0x7f07003b;
-        public static final int seekBar1=0x7f070048;
+        public static final int seekBar1=0x7f07004a;
         public static final int seekBarBlue=0x7f070041;
         public static final int seekBarGreen=0x7f07003f;
         public static final int seekBarRed=0x7f07003d;
@@ -931,8 +956,9 @@ containing a value of this type.
         public static final int split_action_bar=0x7f07001e;
         public static final int submit_area=0x7f070039;
         public static final int tabMode=0x7f070002;
-        public static final int textView=0x7f070043;
-        public static final int textView1=0x7f070049;
+        public static final int textHEXColor=0x7f070043;
+        public static final int textView=0x7f070044;
+        public static final int textView1=0x7f07004b;
         public static final int title=0x7f07002b;
         public static final int top_action_bar=0x7f070020;
         public static final int up=0x7f070021;
@@ -968,20 +994,23 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030016;
         public static final int activity_color_tester=0x7f030017;
         public static final int activity_display_message=0x7f030018;
-        public static final int activity_fullscreen_clock=0x7f030019;
-        public static final int activity_main=0x7f03001a;
-        public static final int activity_seekbar_test=0x7f03001b;
-        public static final int fragment_color_tester=0x7f03001c;
-        public static final int fragment_display_message=0x7f03001d;
-        public static final int fragment_main=0x7f03001e;
-        public static final int fragment_seekbar_test=0x7f03001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030020;
+        public static final int activity_favorite_colors=0x7f030019;
+        public static final int activity_fullscreen_clock=0x7f03001a;
+        public static final int activity_main=0x7f03001b;
+        public static final int activity_seekbar_test=0x7f03001c;
+        public static final int fragment_color_tester=0x7f03001d;
+        public static final int fragment_display_message=0x7f03001e;
+        public static final int fragment_favorite_colors=0x7f03001f;
+        public static final int fragment_main=0x7f030020;
+        public static final int fragment_seekbar_test=0x7f030021;
+        public static final int support_simple_spinner_dropdown_item=0x7f030022;
     }
     public static final class menu {
         public static final int color_tester=0x7f0c0000;
         public static final int display_message=0x7f0c0001;
-        public static final int main=0x7f0c0002;
-        public static final int seekbar_test=0x7f0c0003;
+        public static final int favorite_colors=0x7f0c0002;
+        public static final int main=0x7f0c0003;
+        public static final int seekbar_test=0x7f0c0004;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0a0000;
@@ -1006,13 +1035,16 @@ containing a value of this type.
         public static final int dummy_content=0x7f0a0013;
         public static final int edit_message=0x7f0a0014;
         public static final int hello_world=0x7f0a0015;
-        public static final int seekbarTest=0x7f0a0016;
-        public static final int testClock=0x7f0a0017;
-        public static final int title_activity_color_tester=0x7f0a0018;
-        public static final int title_activity_display_message=0x7f0a0019;
-        public static final int title_activity_fullscreen_clock=0x7f0a001a;
-        public static final int title_activity_main=0x7f0a001b;
-        public static final int title_activity_seekbar_test=0x7f0a001c;
+        public static final int saved_color_1=0x7f0a0016;
+        public static final int seekbarTest=0x7f0a0017;
+        public static final int testClock=0x7f0a0018;
+        public static final int title_activity_addToFavorites=0x7f0a0019;
+        public static final int title_activity_color_tester=0x7f0a001a;
+        public static final int title_activity_display_message=0x7f0a001b;
+        public static final int title_activity_favorite_colors=0x7f0a001c;
+        public static final int title_activity_fullscreen_clock=0x7f0a001d;
+        public static final int title_activity_main=0x7f0a001e;
+        public static final int title_activity_seekbar_test=0x7f0a001f;
     }
     public static final class style {
         /**  Customize your theme here. 

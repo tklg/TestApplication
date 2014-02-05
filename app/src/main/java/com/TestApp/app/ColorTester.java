@@ -1,12 +1,31 @@
 package com.TestApp.app;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.SoundEffectConstants;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class ColorTester extends Activity {
 
@@ -18,14 +37,33 @@ public class ColorTester extends Activity {
     private TextView textViewGreen;
     private TextView textViewBlue;
 
-    public int rgbValueRed;
-    public int rgbValueGreen;
-    public int rgbValueBlue;
+    public int r;
+    public int g;
+    public int b;
+
+    static final String RED_VALUE = "valueRed";
+    static final String GREEN_VALUE = "valueGreen";
+    static final String BLUE_VALUE = "valueBlue";
+    String hex = String.format("#%02x%02x%02x", r, g, b);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            r = savedInstanceState.getInt(RED_VALUE);
+            g = savedInstanceState.getInt(GREEN_VALUE);
+            b = savedInstanceState.getInt(BLUE_VALUE);
+
+        } else {
+
+        }
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_color_tester);
+
+        final LinearLayout layoutMain = (LinearLayout)findViewById(R.id.colorTesterLinearLayout);
+        layoutMain.setBackgroundColor(Color.BLACK);
+        setHEX();
 
         //Define all seekbars
         seekBarRed = (SeekBar) findViewById(R.id.seekBarRed);
@@ -40,20 +78,27 @@ public class ColorTester extends Activity {
         textViewGreen.setText(seekBarGreen.getProgress() + "/" + seekBarGreen.getMax());
         textViewBlue.setText(seekBarBlue.getProgress() + "/" + seekBarBlue.getMax());
 
-        final LinearLayout layoutMain = (LinearLayout)findViewById(R.id.colorTesterLinearLayout);
+        //A bunch of stuff to initialize the view after being restored after a quit
+        seekBarRed.setProgress(r);
+        seekBarGreen.setProgress(g);
+        seekBarBlue.setProgress(b);
+        textViewRed.setText(r + "/" + seekBarRed.getMax());
+        textViewGreen.setText(g + "/" + seekBarGreen.getMax());
+        textViewBlue.setText(b + "/" + seekBarBlue.getMax());
+        InvertTextColor();
+        layoutMain.setBackgroundColor(Color.rgb(r, g, b));
 
         //Seekbar Change Listeners
         seekBarRed.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBarRed, int progressValue, boolean fromUser) {
-                        rgbValueRed = progressValue;
-                        textViewRed.setText(rgbValueRed + "/" + seekBarRed.getMax());
-                        textViewRed.setTextColor(Color.rgb(255-rgbValueRed, 255-rgbValueGreen, 255-rgbValueBlue));
-                        textViewGreen.setTextColor(Color.rgb(255-rgbValueRed, 255-rgbValueGreen, 255-rgbValueBlue));
-                        textViewBlue.setTextColor(Color.rgb(255-rgbValueRed, 255-rgbValueGreen, 255-rgbValueBlue));
+                        r = progressValue;
+                        textViewRed.setText(r + "/" + seekBarRed.getMax());
+                        setHEX();
+                        InvertTextColor();
 
-                        layoutMain.setBackgroundColor(Color.rgb(rgbValueRed, rgbValueGreen, rgbValueBlue));
+                        layoutMain.setBackgroundColor(Color.rgb(r, g, b));
                     }
 
                     @Override
@@ -71,13 +116,12 @@ public class ColorTester extends Activity {
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBarGreen, int progressValue, boolean fromUser) {
-                        rgbValueGreen = progressValue;
-                        textViewGreen.setText(rgbValueGreen + "/" + seekBarGreen.getMax());
-                        textViewRed.setTextColor(Color.rgb(255-rgbValueRed, 255-rgbValueGreen, 255-rgbValueBlue));
-                        textViewGreen.setTextColor(Color.rgb(255-rgbValueRed, 255-rgbValueGreen, 255-rgbValueBlue));
-                        textViewBlue.setTextColor(Color.rgb(255-rgbValueRed, 255-rgbValueGreen, 255-rgbValueBlue));
+                        g = progressValue;
+                        textViewGreen.setText(g + "/" + seekBarGreen.getMax());
+                        setHEX();
+                        InvertTextColor();
 
-                        layoutMain.setBackgroundColor(Color.rgb(rgbValueRed, rgbValueGreen, rgbValueBlue));
+                        layoutMain.setBackgroundColor(Color.rgb(r, g, b));
                     }
 
                     @Override
@@ -95,13 +139,12 @@ public class ColorTester extends Activity {
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBarBlue, int progressValue, boolean fromUser) {
-                        rgbValueBlue = progressValue;
-                        textViewBlue.setText(rgbValueBlue + "/" + seekBarBlue.getMax());
-                        textViewRed.setTextColor(Color.rgb(255-rgbValueRed, 255-rgbValueGreen, 255-rgbValueBlue));
-                        textViewGreen.setTextColor(Color.rgb(255-rgbValueRed, 255-rgbValueGreen, 255-rgbValueBlue));
-                        textViewBlue.setTextColor(Color.rgb(255-rgbValueRed, 255-rgbValueGreen, 255-rgbValueBlue));
+                        b = progressValue;
+                        textViewBlue.setText(b + "/" + seekBarBlue.getMax());
+                        setHEX();
+                        InvertTextColor();
 
-                        layoutMain.setBackgroundColor(Color.rgb(rgbValueRed, rgbValueGreen, rgbValueBlue));
+                        layoutMain.setBackgroundColor(Color.rgb(r, g, b));
                     }
 
                     @Override
@@ -114,16 +157,74 @@ public class ColorTester extends Activity {
 
                     }
                 });
+        }
+
+    public void InvertTextColor() {
+        textViewRed.setTextColor(Color.rgb(255-r, 255-g, 255-b));
+        textViewGreen.setTextColor(Color.rgb(255-r, 255-g, 255-b));
+        textViewBlue.setTextColor(Color.rgb(255-r, 255-g, 255-b));
+    }
+
+    public void setHEX() {
+
+        TextView editTextHEX = (TextView) findViewById(R.id.textHEXColor);
+        hex = String.format("#%02x%02x%02x", r, g, b);
+        editTextHEX.setTextColor(Color.rgb(255-r, 255-g, 255-b));
+        editTextHEX.setText(hex);
+
+    }
+    //open the favorite colors panel thing
+    public void openFavorites() {
+
+        Intent intentFavorite = new Intent(this, FavoriteColors.class);
+        startActivity(intentFavorite);
+    }
+
+    public void addColorToFavorites() {
+        //write current color data to file to be read later
+
+        try {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("config.txt", Context.MODE_APPEND));
+            outputStreamWriter.write(hex + "\n");
+            outputStreamWriter.close();
+            Toast.makeText(ColorTester.this, hex + " added to favorites", Toast.LENGTH_SHORT).show();
+        }
+        catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+    }
+
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+    // Handle presses on the action bar items
+    switch (item.getItemId()) {
+        case R.id.action_favorite:
+            openFavorites();
+            return true;
+
+        case R.id.action_addToFavorite:
+            addColorToFavorites();
+            return true;
+
+        default:
+            return super.onOptionsItemSelected(item);
+    }
+}
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.color_tester, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt(RED_VALUE, r);
+        savedInstanceState.putInt(GREEN_VALUE, g);
+        savedInstanceState.putInt(BLUE_VALUE, b);
     }
-
-
 }
+
+
