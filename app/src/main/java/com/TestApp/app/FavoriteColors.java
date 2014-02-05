@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,12 +21,13 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.nio.Buffer;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +38,13 @@ public class FavoriteColors extends Activity {
 
     String ret = "";
     List<Map<String, String>> colorsList = new ArrayList<Map<String,String>>();
+
+    //Context context = Context.getApplicationContext();
+    File root = android.os.Environment.getExternalStorageDirectory();
+    File dir = new File (root.getAbsolutePath() + "/colortester");
+
+    File inFile = new File(dir, "config.txt");
+    File tempFile = new File(dir, "configTemp.txt");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +65,7 @@ public class FavoriteColors extends Activity {
 
                 // We know the View is a TextView so we can cast it
                 final TextView clickedView = (TextView) view;
-/*
+
         SwipeDismissListViewTouchListener touchListener =
                 new SwipeDismissListViewTouchListener(colorList,
                         new SwipeDismissListViewTouchListener.DismissCallbacks() {
@@ -68,7 +78,7 @@ public class FavoriteColors extends Activity {
                             public void onDismiss(ListView colorList, int[] reverseSortedPositions) {
                                 for (int position : reverseSortedPositions) {
 
-                                    removeLineFromFile("config.txt", clickedView.getText().toString());
+                                    removeLineFromFile(clickedView.getText().toString());
                                     colorsList.remove(simpleAdpt.getItem(position));
                                     //remove the entry from the "database" file here as well
 
@@ -79,35 +89,40 @@ public class FavoriteColors extends Activity {
                 colorList.setOnTouchListener(touchListener);
                 // Setting this scroll listener is required to ensure that during ListView scrolling, we don't look for swipes.
                 colorList.setOnScrollListener(touchListener.makeScrollListener());
-*/
-                removeLineFromFile("config.txt", clickedView.getText().toString());
-                colorsList.remove(simpleAdpt.getItem(position));
-                simpleAdpt.notifyDataSetChanged();
-                Toast.makeText(FavoriteColors.this, "Item with id [" + id + "] - Position [" + position + "] - Color [" + clickedView.getText() + "]", Toast.LENGTH_SHORT).show();
+
+                //removeLineFromFile(clickedView.getText().toString());
+                //colorsList.remove(simpleAdpt.getItem(position));
+                //simpleAdpt.notifyDataSetChanged();
+                makeToast("Item with id [" + id + "] at Position [" + position + "] with Color [" + clickedView.getText() + "]");
             }
         });
     }
 
     private String initList() {
 
-        try {
-            InputStream inputStream = openFileInput("config.txt");
+        BufferedReader input;
 
-            if ( inputStream != null ) {
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String receiveString = "";
-                StringBuilder stringBuilder = new StringBuilder();
-
-                while ( (receiveString = bufferedReader.readLine()) != null ) {
-                    stringBuilder.append(receiveString);
-                    colorsList.add(0, createColor("color", receiveString));
+        if (!inFile.exists()) {
+            makeToast("File " + inFile + " does not exist, creating...");
+            try {
+                if(!inFile.createNewFile()) {
+                    makeToast("File creation failed.");
                 }
-
-                inputStream.close();
-                ret = stringBuilder.toString();
-                Toast.makeText(FavoriteColors.this, "File 'config.txt' closed", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                Log.e("Exception", "File creation failed: " + e.toString());
             }
+        }
+
+        try {
+            input = new BufferedReader(new FileReader(inFile));
+            String line;
+            while ((line = input.readLine()) != null) {
+                colorsList.add(0, createColor("color", line));
+            }
+
+                input.close();
+                makeToast("File " + inFile + " closed");
+
         }
         catch (FileNotFoundException e) {
             Log.e("login activity", "File not found: " + e.toString());
@@ -125,40 +140,48 @@ public class FavoriteColors extends Activity {
         return color;
     }
 
-    public void removeLineFromFile(String file, String lineToRemove) {
+    public void removeLineFromFile(String lineToRemove) {
 
-        File inFile = new File("config.txt");
-        File tempFile = new File("configTemp.txt");
+        if (!inFile.exists()) {
+            makeToast("File " + inFile + " does not exist, creating...");
+            try {
+                if(!inFile.createNewFile()) {
+                    makeToast("File creation failed.");
+                }
+            } catch (IOException e) {
+                Log.e("Exception", "File creation failed: " + e.toString());
+            }
+        }
+
+        if (!tempFile.exists()) {
+            makeToast("File " + tempFile + " does not exist, creating...");
+            try {
+                if(!tempFile.createNewFile()) {
+                    makeToast("File creation failed.");
+                }
+            } catch (IOException e) {
+                Log.e("Exception", "File creation failed: " + e.toString());
+            }
+        }
 
         try {
-            //tempFile.mkdir();
-            //tempFile.createNewFile();
-            InputStream inputStream = openFileInput(file);
 
-            if (inputStream != null) {
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                //BufferedWriter output = new BufferedWriter(new FileWriter(tempFile));
-                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("configTemp.txt", Context.MODE_APPEND));
-                //Writer writer;
-                //writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(tempFile), "utf-8"));
+                BufferedReader input;
+                input = new BufferedReader(new FileReader(inFile));
 
                 String receiveString;
-
-                while ((receiveString = bufferedReader.readLine()) != null ) {
+                BufferedWriter output;
+                output = new BufferedWriter(new FileWriter(tempFile, true));
+                while ((receiveString = input.readLine()) != null ) {
                     if (!receiveString.equals(lineToRemove)) {
-                    outputStreamWriter.write(receiveString + "\n");
-                        //output.write(receiveString + "\n");
-                        //writer.write(receiveString + "\n");
+
+                        output.write(receiveString + "\n");
                     }
                 }
 
-                inputStream.close();
-                outputStreamWriter.close();
-                //output.close();
-                //writer.close();
+                //inputStream.close();
+                output.close();
                 //ret = stringBuilder.toString();
-            }
 
             //Delete the original file
 
@@ -215,5 +238,9 @@ public class FavoriteColors extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void makeToast(String message) {
+        Toast.makeText(FavoriteColors.this, message, Toast.LENGTH_SHORT).show();
     }
 }

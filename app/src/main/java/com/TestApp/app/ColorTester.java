@@ -20,12 +20,17 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Context;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.Writer;
 
 public class ColorTester extends Activity {
 
@@ -46,6 +51,11 @@ public class ColorTester extends Activity {
     static final String BLUE_VALUE = "valueBlue";
     String hex = String.format("#%02x%02x%02x", r, g, b);
 
+    File root = android.os.Environment.getExternalStorageDirectory();
+    File dir = new File (root.getAbsolutePath() + "/colortester/");
+    File inFile = new File(dir, "config.txt");
+    File tempFile = new File(dir, "configTemp.txt");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +68,7 @@ public class ColorTester extends Activity {
         } else {
 
         }
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_color_tester);
 
@@ -182,12 +193,29 @@ public class ColorTester extends Activity {
 
     public void addColorToFavorites() {
         //write current color data to file to be read later
+        if (!dir.exists()) {
+            if (dir.mkdirs()) {
+                makeToast("Creating directory " + dir);
+            }
+        }
+
+        Writer output;
+
+        if (!inFile.exists()) {
+            try {
+                if (inFile.createNewFile()) {
+                    makeToast("Creating file " + inFile);
+                }
+            } catch (IOException e) {
+                Log.e("Exception", "File creation failed: " + e.toString());
+            }
+        }
 
         try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("config.txt", Context.MODE_APPEND));
-            outputStreamWriter.write(hex + "\n");
-            outputStreamWriter.close();
-            Toast.makeText(ColorTester.this, hex + " added to favorites", Toast.LENGTH_SHORT).show();
+            output = new BufferedWriter(new FileWriter(inFile, true));
+            output.write(hex + "\n");
+            output.close();
+            makeToast(hex + " added to favorites");
         }
         catch (IOException e) {
             Log.e("Exception", "File write failed: " + e.toString());
@@ -224,6 +252,10 @@ public boolean onOptionsItemSelected(MenuItem item) {
         savedInstanceState.putInt(RED_VALUE, r);
         savedInstanceState.putInt(GREEN_VALUE, g);
         savedInstanceState.putInt(BLUE_VALUE, b);
+    }
+
+    public void makeToast(String message) {
+        Toast.makeText(ColorTester.this, message, Toast.LENGTH_SHORT).show();
     }
 }
 
