@@ -25,9 +25,9 @@
 
     <string name="title_activity_favorite_colors">Favorite Colors</string>
     <string name="title_activity_addToFavorites">Add to favorites</string>
-
     <string name="favcolor_menuitem_use">Use</string>
     <string name="favcolor_menuitem_delete">Delete</string>
     <string name="favcolor_menuitem_info">More info</string>
+    <string name="title_activity_color_info">ColorInfo</string>
 
 </resources>

@@ -1,35 +1,23 @@
 package com.TestApp.app;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.SoundEffectConstants;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.Context;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.io.Writer;
 
 public class ColorTester extends Activity {
@@ -54,12 +42,17 @@ public class ColorTester extends Activity {
     File root = android.os.Environment.getExternalStorageDirectory();
     File dir = new File (root.getAbsolutePath() + "/colortester/");
     File inFile = new File(dir, "config.txt");
-    File tempFile = new File(dir, "configTemp.txt");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Bundle extras = getIntent().getExtras();
+        r = extras.getInt("VALUE_RED");
+        g = extras.getInt("VALUE_GREEN");
+        b = extras.getInt("VALUE_BLUE");
+
+/*
         if (savedInstanceState != null) {
             r = savedInstanceState.getInt(RED_VALUE);
             g = savedInstanceState.getInt(GREEN_VALUE);
@@ -68,7 +61,7 @@ public class ColorTester extends Activity {
         } else {
 
         }
-
+*/
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_color_tester);
 

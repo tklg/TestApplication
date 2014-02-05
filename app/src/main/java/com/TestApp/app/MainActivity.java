@@ -33,6 +33,13 @@ public class MainActivity extends Activity {
 
     public void testColor(View view) {
         Intent intentColor = new Intent(this, ColorTester.class);
+        int selectedColorR = 0;
+        int selectedColorG = 0;
+        int selectedColorB = 0;
+
+        intentColor.putExtra("VALUE_RED", selectedColorR);
+        intentColor.putExtra("VALUE_GREEN", selectedColorG);
+        intentColor.putExtra("VALUE_BLUE", selectedColorB);
         startActivity(intentColor);
     }
 

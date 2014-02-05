@@ -1,18 +1,16 @@
 package com.TestApp.app;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.SimpleAdapter;
@@ -23,26 +21,26 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.nio.Buffer;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import java.util.ArrayList;
 
 public class FavoriteColors extends Activity {
 
+    int selectedColorR = 0;
+    int selectedColorG = 0;
+    int selectedColorB = 0;
+    int r;
+    int g;
+    int b;
+
     String ret = "";
     List<Map<String, String>> colorsList = new ArrayList<Map<String,String>>();
 
-    //Context context = Context.getApplicationContext();
     File root = android.os.Environment.getExternalStorageDirectory();
     File dir = new File (root.getAbsolutePath() + "/colortester");
 
@@ -57,7 +55,6 @@ public class FavoriteColors extends Activity {
 
         initList();
 
-        //final LinearLayout colorListParent = (LinearLayout) findViewById(R.id.colorListParent);
         final ListView colorList = (ListView) findViewById(R.id.colorList);
         final SimpleAdapter simpleAdpt = new SimpleAdapter(this, colorsList, android.R.layout.simple_list_item_1, new String[] {"color"}, new int[] {android.R.id.text1});
         colorList.setAdapter(simpleAdpt);
@@ -69,7 +66,6 @@ public class FavoriteColors extends Activity {
 
                 final TextView clickedView = (TextView) view;
                 final String hexval = clickedView.getText().toString();
-                //makeToast("Item with id [" + id + "] at Position [" + position + "] with Color [" + clickedView.getText() + "]");
 
                 PopupMenu popup = new PopupMenu(FavoriteColors.this, clickedView, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
                 popup.getMenuInflater().inflate(R.menu.popup_menu_favoritecolor, popup.getMenu());
@@ -78,18 +74,21 @@ public class FavoriteColors extends Activity {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.favcolor_use: {
-                                makeToast("Using color " + clickedView.getText().toString());
+                                makeToast("Using color " + hexval);
+                                calculateRGB(hexval);
+                                sendColorToMain();
                                 break;
                             }
                             case R.id.favcolor_delete: {
                                 removeLineFromFile(hexval);
                                 colorsList.remove(simpleAdpt.getItem(position));
                                 simpleAdpt.notifyDataSetChanged();
-                                makeToast(hexval + " deleted. Undo?");
                                 break;
                             }
                             case R.id.favcolor_info: {
-                                makeToast("TODO");
+                                makeToast("Color Info:");
+                                calculateRGB(hexval);
+                                sendColorToInfo();
                                 break;
                             }
                         }
@@ -241,5 +240,42 @@ public class FavoriteColors extends Activity {
 
     public void makeToast(String message) {
         Toast.makeText(FavoriteColors.this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void sendColorToMain() {
+
+        Intent intent = new Intent(this, ColorTester.class);
+        selectedColorR = r;
+        selectedColorG = g;
+        selectedColorB = b;
+
+        intent.putExtra("VALUE_RED", selectedColorR);
+        intent.putExtra("VALUE_GREEN", selectedColorG);
+        intent.putExtra("VALUE_BLUE", selectedColorB);
+        startActivity(intent);
+
+    }
+
+    public void sendColorToInfo() {
+
+        Intent intent = new Intent(this, ColorInfo.class);
+        selectedColorR = r;
+        selectedColorG = g;
+        selectedColorB = b;
+
+        intent.putExtra("VALUE_RED", selectedColorR);
+        intent.putExtra("VALUE_GREEN", selectedColorG);
+        intent.putExtra("VALUE_BLUE", selectedColorB);
+        startActivity(intent);
+
+    }
+
+    public void calculateRGB(String hex) {
+
+        r = Integer.valueOf(hex.substring(1, 3), 16);
+        g = Integer.valueOf(hex.substring(3, 5), 16);
+        b = Integer.valueOf(hex.substring(5, 7), 16);
+        makeToast("Calculated RGB of" + hex);
+        //int color = Color.parseColor(hex);
     }
 }

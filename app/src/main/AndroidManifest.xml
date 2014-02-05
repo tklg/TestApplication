@@ -5,7 +5,8 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -62,6 +63,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.TestApp.app.ColorTester" />
+        </activity>
+        <activity
+            android:name="com.TestApp.app.ColorInfo"
+            android:label="@string/title_activity_color_info"
+            android:parentActivityName="com.TestApp.app.FavoriteColors" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.TestApp.app.FavoriteColors" />
         </activity>
     </application>
 
