@@ -30,9 +30,9 @@ public class ColorTester extends Activity {
     private TextView textViewGreen;
     private TextView textViewBlue;
 
-    public int r;
-    public int g;
-    public int b;
+    public int r = 0;
+    public int g = 0;
+    public int b = 0;
 
     static final String RED_VALUE = "valueRed";
     static final String GREEN_VALUE = "valueGreen";
@@ -47,21 +47,15 @@ public class ColorTester extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        try {
         Bundle extras = getIntent().getExtras();
         r = extras.getInt("VALUE_RED");
         g = extras.getInt("VALUE_GREEN");
         b = extras.getInt("VALUE_BLUE");
-
-/*
-        if (savedInstanceState != null) {
-            r = savedInstanceState.getInt(RED_VALUE);
-            g = savedInstanceState.getInt(GREEN_VALUE);
-            b = savedInstanceState.getInt(BLUE_VALUE);
-
-        } else {
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-*/
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_color_tester);
 

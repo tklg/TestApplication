@@ -6,7 +6,7 @@
 
     <item
         android:id="@+id/favcolor_use"
-        android:title="@string/favcolor_menuitem_use"/>
+        android:title="@string/favcolor_menuitem_use" />
 
     <item
         android:id="@+id/favcolor_delete"

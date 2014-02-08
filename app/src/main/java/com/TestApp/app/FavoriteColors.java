@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.SimpleAdapter;
@@ -66,6 +67,9 @@ public class FavoriteColors extends Activity {
 
                 final TextView clickedView = (TextView) view;
                 final String hexval = clickedView.getText().toString();
+                LinearLayout favcolor_preview = (LinearLayout) findViewById(R.id.favcolor_colordisplay);
+                calculateRGB(hexval);
+                favcolor_preview.setBackgroundColor(Color.rgb(r, g, b));
 
                 PopupMenu popup = new PopupMenu(FavoriteColors.this, clickedView, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
                 popup.getMenuInflater().inflate(R.menu.popup_menu_favoritecolor, popup.getMenu());
@@ -86,7 +90,7 @@ public class FavoriteColors extends Activity {
                                 break;
                             }
                             case R.id.favcolor_info: {
-                                makeToast("Color Info:");
+                                makeToast("Color info of " + hexval);
                                 calculateRGB(hexval);
                                 sendColorToInfo();
                                 break;
@@ -156,7 +160,7 @@ public class FavoriteColors extends Activity {
         }
 
         if (!tempFile.exists()) {
-            makeToast("File " + tempFile + " does not exist, creating...");
+            //makeToast("File " + tempFile + " does not exist, creating...");
             try {
                 if(!tempFile.createNewFile()) {
                     makeToast("File creation failed.");
@@ -190,7 +194,7 @@ public class FavoriteColors extends Activity {
                 }
                 boolean fileDeleted = inFile.delete();
 
-                Toast.makeText(FavoriteColors.this, "Delete " + inFile + " = " + fileDeleted, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(FavoriteColors.this, "Delete " + inFile + " = " + fileDeleted, Toast.LENGTH_SHORT).show();
 
             } catch (Exception e) {
                 System.out.println("Could not delete file");
@@ -205,7 +209,7 @@ public class FavoriteColors extends Activity {
                 }
                 boolean fileRenamed = tempFile.renameTo(inFile);
 
-                Toast.makeText(FavoriteColors.this, "Rename " + tempFile + " to " + inFile + " = " + fileRenamed, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(FavoriteColors.this, "Rename " + tempFile + " to " + inFile + " = " + fileRenamed, Toast.LENGTH_SHORT).show();
 
             } catch (Exception e) {
                 System.out.println("Could not rename file");
@@ -275,7 +279,6 @@ public class FavoriteColors extends Activity {
         r = Integer.valueOf(hex.substring(1, 3), 16);
         g = Integer.valueOf(hex.substring(3, 5), 16);
         b = Integer.valueOf(hex.substring(5, 7), 16);
-        makeToast("Calculated RGB of" + hex);
-        //int color = Color.parseColor(hex);
+        //makeToast("Calculated RGB of" + hex);
     }
 }

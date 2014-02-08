@@ -21,7 +21,8 @@
     <string name="title_activity_seekbar_test">Seekbar Tester</string>
     <string name="seekbarTest">SeekBar Test</string>
 
-    <String name="action_favorite">❤</String>
+    <string name="action_favorite">❤</string>
+    <string name="colorvalue">VALUE</string>
 
     <string name="title_activity_favorite_colors">Favorite Colors</string>
     <string name="title_activity_addToFavorites">Add to favorites</string>
@@ -29,5 +30,13 @@
     <string name="favcolor_menuitem_delete">Delete</string>
     <string name="favcolor_menuitem_info">More info</string>
     <string name="title_activity_color_info">ColorInfo</string>
+
+    <string name="colorinfotitle">Color info for:  </string>
+    <string name="red">Red: </string>
+    <string name="green">Green: </string>
+    <string name="blue">Blue: </string>
+    <string name="hue">Hue: </string>
+    <string name="saturation">Sat: </string>
+    <string name="value">Value: </string>
 
 </resources>
