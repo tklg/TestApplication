@@ -71,15 +71,15 @@ public class ColorInfo extends Activity {
         colorInfo_red.setText(r + ""); //it likes string
         colorInfo_green.setText(g + "");
         colorInfo_blue.setText(b + "");
-        //colorInfo_hue.setText(calculatedH + "");
-        //colorInfo_sat.setText(calculatedS + "");
-        //colorInfo_val.setText(calculatedV + "");
-        colorInfo_hue.setText(hsv[1] + "");
-        colorInfo_sat.setText(hsv[2] + "%");
-        colorInfo_val.setText(hsv[3] + "%");
+        colorInfo_hue.setText(calculatedH + "");
+        colorInfo_sat.setText(calculatedS + "");
+        colorInfo_val.setText(calculatedV + "");
+        //colorInfo_hue.setText(hsv[1] + "");
+        //colorInfo_sat.setText(hsv[2] + "%");
+        //colorInfo_val.setText(hsv[3] + "%");
 
     }
-/*
+
     public void getHSV() {
         int red = r/255;
         int green = g/255;
@@ -102,7 +102,7 @@ public class ColorInfo extends Activity {
             calculatedV = maxRGB;
 
     }
-*/
+
     public void RGBtoHSV() {
         int red = r;
         int green = g;
